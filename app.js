@@ -9,7 +9,7 @@ const app = express()
 app.use(cors())
 app.use(express.json())
 
-mongoose.connect('mongodb://localhost:27017/myportfolio').then(() => console.log("MongoDB Connected")).catch((err) => console.error("MongoDB Error:", err))
+mongoose.connect('mongodb+srv://vakshat613:SmyKM3E6DmQUPo8g@cluster0.z4gwdkv.mongodb.net/myportfolio').then(() => console.log("MongoDB Connected")).catch((err) => console.error("MongoDB Error:", err))
 
 // POST Route for Contact Form
 app.post("/api/contact", async (req, res) => {
