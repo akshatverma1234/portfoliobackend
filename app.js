@@ -5,12 +5,14 @@ require("dotenv").config()
 
 const Contact = require("./models/Contact")
 
+
+
+const app = express()
+
 const coreOption = {
   origin: "*",
   optionsSuccessStatus: 200,
 }
-
-const app = express()
 app.use(cors())
 app.use(express.json())
 
