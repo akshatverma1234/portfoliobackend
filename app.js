@@ -10,7 +10,7 @@ const Contact = require("./models/Contact")
 const app = express()
 
 const coreOption = {
-  origin: "https://myportfolio-beta-lilac.vercel.app/",
+  origin: "https://myportfolio-beta-lilac.vercel.app",
   optionsSuccessStatus: 200,
 }
 app.use(cors())
