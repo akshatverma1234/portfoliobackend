@@ -5,14 +5,24 @@ require("dotenv").config()
 
 const Contact = require("./models/Contact")
 
+const coreOption = {
+  origin: "https://myportfolio-djhuw6k5f-akshatverma1234s-projects.vercel.app/",
+  optionsSuccessStatus: 200,
+}
+
 const app = express()
 app.use(cors())
 app.use(express.json())
 
-mongoose.connect('mongodb+srv://vakshat613:SmyKM3E6DmQUPo8g@cluster0.z4gwdkv.mongodb.net/myportfolio').then(() => console.log("MongoDB Connected")).catch((err) => console.error("MongoDB Error:", err))
+mongoose
+  .connect(process.env.MONGO_URI, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  })
+  .then(() => console.log("MongoDB Connected"))
+  .catch((err) => console.error("MongoDB Error:", err))
 
-// POST Route for Contact Form
-app.post("/api/contact", async (req, res) => {
+app.post("/api/contact", cors(coreOption), async (req, res) => {
   const { name, email, message } = req.body
 
   if (!name || !email || !message) {
