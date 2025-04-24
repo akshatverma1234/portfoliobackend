@@ -6,7 +6,7 @@ require("dotenv").config()
 const Contact = require("./models/Contact")
 
 const coreOption = {
-  origin: "https://myportfolio-djhuw6k5f-akshatverma1234s-projects.vercel.app/",
+  origin: "*",
   optionsSuccessStatus: 200,
 }
 
