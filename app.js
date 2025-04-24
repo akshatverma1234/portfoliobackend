@@ -15,10 +15,7 @@ app.use(cors())
 app.use(express.json())
 
 mongoose
-  .connect(process.env.MONGO_URI, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  })
+  .connect("mongodb+srv://vakshat613:SmyKM3E6DmQUPo8g@cluster0.z4gwdkv.mongodb.net/myportfolio")
   .then(() => console.log("MongoDB Connected"))
   .catch((err) => console.error("MongoDB Error:", err))
 
